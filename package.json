@@ -1,12 +1,17 @@
 {
-  "name": "gatsby-prismic-starter-prist",
+  "name": "ezralazuardy.com",
   "private": true,
-  "description": "A starter powered by Gatsby and Prismic to showcase portfolios and blogs.",
-  "version": "0.1.0",
-  "author": "Marguerite Roth | marguerite.io | marguerite.roth@gmail.com",
+  "description": "Ezra Lazuardy's profile website.",
+  "version": "0.0.1",
+  "author": "Ezra Lazuardy | ezralazuardy.com | ezralucio@gmail.com",
   "dependencies": {
     "@emotion/core": "^10.0.10",
+    "@emotion/css": "^10.0.12",
     "@emotion/styled": "^10.0.12",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "gatsby": "^2.12.0",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-catch-links": "^2.0.12",
@@ -22,7 +27,6 @@
     "gatsby-source-prismic-graphql": "3.4.0-beta.1",
     "gatsby-transformer-sharp": "^2.2.16",
     "node-sass": "^4.12.0",
-    "prismic-reactjs": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
@@ -38,13 +42,11 @@
   },
   "devDependencies": {
     "gatsby-plugin-remove-trailing-slashes": "^2.0.11",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "styles": "^0.2.1"
   },
   "keywords": [
-    "gatsby",
-    "prismic",
-    "blog",
-    "portfolio"
+    "gatsby"
   ],
   "license": "MIT",
   "scripts": {
