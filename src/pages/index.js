@@ -182,7 +182,7 @@ const RenderBody = ({ meta }) => (
         something has <a href={"/"}>crush</a>ed.
       </h1>
       <p>
-        apologize, i'm not in mood for update my own website atm.
+        apologize, i'm not in mood to update my own website atm.
         <br />
         here some links for you,
       </p>
