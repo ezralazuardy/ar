@@ -3,13 +3,13 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import styled from "@emotion/styled"
 import Layout from "../components/Layout"
-import ProjectCard from "../components/ProjectCard"
+import { graphql } from "gatsby"
 
 const ProjectTitle = styled("h1")`
   margin-bottom: 1em;
 `
 
-const Project = ({ meta, projects }) => (
+const Project = ({ meta }) => (
   <>
     <Helmet
       title={`Projects | Ezra Lazuardy`}
@@ -51,16 +51,16 @@ const Project = ({ meta, projects }) => (
     <Layout>
       <ProjectTitle>Projects</ProjectTitle>
       <>
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={i}
-            category={project.node.project_category}
-            title={project.node.project_title}
-            description={project.node.project_preview_description}
-            thumbnail={project.node.project_preview_thumbnail}
-            uid={project.node._meta.uid}
-          />
-        ))}
+        {/*{projects.map((project, i) => (*/}
+        {/*  <ProjectCard*/}
+        {/*    key={i}*/}
+        {/*    category={project.node.project_category}*/}
+        {/*    title={project.node.project_title}*/}
+        {/*    description={project.node.project_preview_description}*/}
+        {/*    thumbnail={project.node.project_preview_thumbnail}*/}
+        {/*    uid={project.node._meta.uid}*/}
+        {/*  />*/}
+        {/*))}*/}
       </>
     </Layout>
   </>
@@ -75,3 +75,15 @@ export default ({ data }) => {
 Project.propTypes = {
   meta: PropTypes.array.isRequired,
 }
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`
