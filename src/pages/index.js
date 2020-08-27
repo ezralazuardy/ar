@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import colors from "../styles/colors"
 import dimensions from "../styles/dimensions"
 import Layout from "../components/Layout"
+import { config } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
 import {
@@ -14,9 +15,9 @@ import {
   faMedium,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
-import PropTypes from "prop-types"
-import { graphql } from "gatsby"
 import ReactCSSTransitionGroup from "react-addons-css-transition-group"
+
+config.autoAddCss = false
 
 const Hero = styled("div")`
   padding-top: 2.5em;
@@ -82,7 +83,7 @@ const Hero = styled("div")`
 
   .fade-appear.fade-appear-active {
     opacity: 1;
-    transition: opacity .7s ease-in;
+    transition: opacity 0.7s ease-in;
   }
 `
 
@@ -188,7 +189,9 @@ const RenderBody = ({ meta }) => (
       <ReactCSSTransitionGroup
         transitionName="fade"
         transitionAppear={true}
-        transitionAppearTimeout={600}>
+        transitionAppearTimeout={600}
+        transitionEnterTimeout={600}
+      >
         <h1>
           <span role={"img"} aria-label={"broken-heart"}>
             💔
@@ -280,27 +283,10 @@ const RenderBody = ({ meta }) => (
   </>
 )
 
-export default ({ data }) => {
-  const meta = data.site.siteMetadata
+export default () => {
   return (
     <Layout>
-      <RenderBody meta={meta} />
+      <RenderBody />
     </Layout>
   )
 }
-
-RenderBody.propTypes = {
-  meta: PropTypes.object.isRequired,
-}
-
-export const query = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`

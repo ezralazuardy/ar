@@ -38,20 +38,27 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            description
+            author
           }
         }
       }
     `}
-    render={data => (
-      <LayoutContainer className="div">
-        <Global styles={[globalStyles, typeStyles]} />
-        <div className="Layout">
-          <Header />
-          <main className="Layout__content">{children}</main>
-          <Footer />
-        </div>
-      </LayoutContainer>
-    )}
+    render={data => {
+      const childrenWithProps = React.Children.map(children, child =>
+        React.cloneElement(child, { meta: data.site.siteMetadata })
+      )
+      return (
+        <LayoutContainer className="div">
+          <Global styles={[globalStyles, typeStyles]} />
+          <div className="Layout">
+            <Header />
+            <main className="Layout__content">{childrenWithProps}</main>
+            <Footer />
+          </div>
+        </LayoutContainer>
+      )
+    }}
   />
 )
 
