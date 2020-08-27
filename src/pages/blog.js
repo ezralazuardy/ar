@@ -1,9 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import styled from "@emotion/styled"
 import Layout from "../components/Layout"
-import { graphql } from "gatsby"
 
 const BlogTitle = styled("h1")`
   margin-bottom: 1em;
@@ -36,7 +34,7 @@ const Blog = ({ meta }) => (
         },
         {
           property: `og:title`,
-          content: `Blog | Prist, Gatsby & Prismic Starter`,
+          content: `Blog | Ezra Lazuardy`,
         },
         {
           property: `og:description`,
@@ -64,43 +62,28 @@ const Blog = ({ meta }) => (
         },
       ].concat(meta)}
     />
-    <Layout>
-      <BlogTitle>Blog</BlogTitle>
-      {/*<BlogGrid>*/}
-      {/*  {posts.map((post, i) => (*/}
-      {/*    <PostCard*/}
-      {/*      key={i}*/}
-      {/*      author={post.node.post_author}*/}
-      {/*      category={post.node.post_category}*/}
-      {/*      title={post.node.post_title}*/}
-      {/*      date={post.node.post_date}*/}
-      {/*      description={post.node.post_preview_description}*/}
-      {/*      uid={post.node._meta.uid}*/}
-      {/*    />*/}
-      {/*  ))}*/}
-      {/*</BlogGrid>*/}
-    </Layout>
+    <BlogTitle>Blog</BlogTitle>
+    {/*<BlogGrid>*/}
+    {/*  {posts.map((post, i) => (*/}
+    {/*    <PostCard*/}
+    {/*      key={i}*/}
+    {/*      author={post.node.post_author}*/}
+    {/*      category={post.node.post_category}*/}
+    {/*      title={post.node.post_title}*/}
+    {/*      date={post.node.post_date}*/}
+    {/*      description={post.node.post_preview_description}*/}
+    {/*      uid={post.node._meta.uid}*/}
+    {/*    />*/}
+    {/*  ))}*/}
+    {/*</BlogGrid>*/}
   </>
 )
 
-export default ({ data }) => {
-  const meta = data.site.siteMetadata
+export default () => {
   const posts = null
-  return <Blog meta={meta} posts={posts} />
+  return (
+    <Layout>
+      <Blog posts={posts} />
+    </Layout>
+  )
 }
-
-Blog.propTypes = {
-  meta: PropTypes.object.isRequired,
-}
-
-export const query = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`

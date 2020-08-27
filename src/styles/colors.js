@@ -2,7 +2,7 @@
 const colors = {
   red600: "#db1122",
   red500: "#E81224",
-  red200: "#ffbcc2",
+  red200: "#ffd8d8",
 
   blue900: "#192c4c",
   blue800: "#2a4a7f",

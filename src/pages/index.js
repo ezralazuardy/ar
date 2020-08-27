@@ -4,8 +4,6 @@ import styled from "@emotion/styled"
 import colors from "../styles/colors"
 import dimensions from "../styles/dimensions"
 import Layout from "../components/Layout"
-import { config } from "@fortawesome/fontawesome-svg-core"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
 import {
   faSoundcloud,
@@ -15,9 +13,38 @@ import {
   faMedium,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
-import ReactCSSTransitionGroup from "react-addons-css-transition-group"
+import IconBar from "../components/_ui/IconBar"
 
-config.autoAddCss = false
+const SocialIcons = [
+  {
+    image: faSoundcloud,
+    link: "https://soundcloud.com/ezralazuardy",
+  },
+  {
+    image: faStackOverflow,
+    link: "https://stackoverflow.com/users/8109202/ezra-lazuardy?tab=profile",
+  },
+  {
+    image: faHackerrank,
+    link: "https://www.hackerrank.com/ezralazuardy",
+  },
+  {
+    image: faGithub,
+    link: "https://github.com/ezralazuardy",
+  },
+  {
+    image: faMedium,
+    link: "https://medium.com/@ezralazuardy",
+  },
+  {
+    image: faLinkedin,
+    link: "https://linkedin.com/in/ezralazuardy",
+  },
+  {
+    image: faEnvelopeSquare,
+    link: "mailto:ezralucio@gmail.com",
+  },
+]
 
 const Hero = styled("div")`
   padding-top: 2.5em;
@@ -76,15 +103,6 @@ const Hero = styled("div")`
       }
     }
   }
-
-  .fade-appear {
-    opacity: 0.01;
-  }
-
-  .fade-appear.fade-appear-active {
-    opacity: 1;
-    transition: opacity 0.7s ease-in;
-  }
 `
 
 // const Section = styled("div")`
@@ -131,22 +149,22 @@ const Hero = styled("div")`
 //     }
 // `
 
-const IconBar = styled("div")`
-  font-size: 1.5rem;
-  a {
-    cursor: pointer;
-    transition: all 100ms ease-in-out;
-    color: black;
-    margin-right: 1.8rem;
-    &:hover {
-      cursor: pointer;
-      transition: all 100ms ease-in-out;
-      color: ${colors.red600};
-    }
-  }
-`
+// const IconBar = styled("div")`
+//   font-size: 1.5rem;
+//   a {
+//     cursor: pointer;
+//     transition: all 100ms ease-in-out;
+//     color: black;
+//     margin-right: 1.8rem;
+//     &:hover {
+//       cursor: pointer;
+//       transition: all 100ms ease-in-out;
+//       color: ${colors.red600};
+//     }
+//   }
+// `
 
-const RenderBody = ({ meta }) => (
+const Home = ({ meta }) => (
   <>
     <Helmet
       title={meta.title}
@@ -186,77 +204,19 @@ const RenderBody = ({ meta }) => (
       ].concat(meta)}
     />
     <Hero>
-      <ReactCSSTransitionGroup
-        transitionName="fade"
-        transitionAppear={true}
-        transitionAppearTimeout={600}
-        transitionEnterTimeout={600}
-      >
-        <h1>
-          <span role={"img"} aria-label={"broken-heart"}>
-            💔
-          </span>{" "}
-          something has <a href={"/"}>crush</a>ed.
-        </h1>
-        <p>
-          apologize, i'm not in mood to update my own website atm.
-          <br />
-          here some links for you,
-        </p>
-        <IconBar>
-          <a
-            href="https://soundcloud.com/ezralazuardy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faSoundcloud} />
-          </a>
-          <a
-            href="https://stackoverflow.com/users/8109202/ezra-lazuardy?tab=profile"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faStackOverflow} />
-          </a>
-          <a
-            href="https://www.hackerrank.com/ezralazuardy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faHackerrank} />
-          </a>
-          <a
-            href="https://github.com/ezralazuardy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-          <a
-            href="https://medium.com/@ezralazuardy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faMedium} />
-          </a>
-          <a
-            href="https://linkedin.com/in/ezralazuardy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a
-            href="mailto:ezralucio@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faEnvelopeSquare} />
-          </a>
-        </IconBar>
-      </ReactCSSTransitionGroup>
+      <h1>
+        <span role={"img"} aria-label={"broken-heart"}>
+          💔
+        </span>{" "}
+        something has <a href={"/"}>crush</a>ed.
+      </h1>
+      <p>
+        apologize, i'm not in mood to update my own website atm.
+        <br />
+        here some links for you,
+      </p>
+      <IconBar icons={SocialIcons} />
     </Hero>
-
     {/*<Section>*/}
     {/*    {projects.map((project, i) => (*/}
     {/*        <ProjectCard*/}
@@ -272,7 +232,6 @@ const RenderBody = ({ meta }) => (
     {/*        See more work <span>&#8594;</span>*/}
     {/*    </WorkAction>*/}
     {/*</Section>*/}
-
     {/*<Section>*/}
     {/*    {RichText.render(home.about_title)}*/}
     {/*    <About*/}
@@ -283,10 +242,8 @@ const RenderBody = ({ meta }) => (
   </>
 )
 
-export default () => {
-  return (
-    <Layout>
-      <RenderBody />
-    </Layout>
-  )
-}
+export default () => (
+  <Layout>
+    <Home />
+  </Layout>
+)

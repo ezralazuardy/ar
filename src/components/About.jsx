@@ -2,7 +2,6 @@ import React from "react"
 import Button from "../components/_ui/Button"
 import styled from "@emotion/styled"
 import dimensions from "../styles/dimensions"
-import { RichText } from "prismic-reactjs"
 import PropTypes from "prop-types"
 
 const AboutContainer = styled("div")`

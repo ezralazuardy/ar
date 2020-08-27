@@ -1,9 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import styled from "@emotion/styled"
 import Layout from "../components/Layout"
-import { graphql } from "gatsby"
 
 const ProjectTitle = styled("h1")`
   margin-bottom: 1em;
@@ -12,7 +10,7 @@ const ProjectTitle = styled("h1")`
 const Project = ({ meta }) => (
   <>
     <Helmet
-      title={`Projects | Ezra Lazuardy`}
+      title={`Project | Ezra Lazuardy`}
       meta={[
         {
           name: `description`,
@@ -20,7 +18,7 @@ const Project = ({ meta }) => (
         },
         {
           property: `og:title`,
-          content: `Work | Prist, Gatsby & Prismic Starter`,
+          content: `Project | Ezra Lazuardy`,
         },
         {
           property: `og:description`,
@@ -48,42 +46,25 @@ const Project = ({ meta }) => (
         },
       ].concat(meta)}
     />
-    <Layout>
-      <ProjectTitle>Projects</ProjectTitle>
-      <>
-        {/*{projects.map((project, i) => (*/}
-        {/*  <ProjectCard*/}
-        {/*    key={i}*/}
-        {/*    category={project.node.project_category}*/}
-        {/*    title={project.node.project_title}*/}
-        {/*    description={project.node.project_preview_description}*/}
-        {/*    thumbnail={project.node.project_preview_thumbnail}*/}
-        {/*    uid={project.node._meta.uid}*/}
-        {/*  />*/}
-        {/*))}*/}
-      </>
-    </Layout>
+    <ProjectTitle>Projects</ProjectTitle>
+    {/*{projects.map((project, i) => (*/}
+    {/*  <ProjectCard*/}
+    {/*    key={i}*/}
+    {/*    category={project.node.project_category}*/}
+    {/*    title={project.node.project_title}*/}
+    {/*    description={project.node.project_preview_description}*/}
+    {/*    thumbnail={project.node.project_preview_thumbnail}*/}
+    {/*    uid={project.node._meta.uid}*/}
+    {/*  />*/}
+    {/*))}*/}
   </>
 )
 
-export default ({ data }) => {
-  const meta = data.site.siteMetadata
+export default () => {
   const projects = null
-  return <Project meta={meta} projects={projects} />
+  return (
+    <Layout>
+      <Project projects={projects} />
+    </Layout>
+  )
 }
-
-Project.propTypes = {
-  meta: PropTypes.array.isRequired,
-}
-
-export const query = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`

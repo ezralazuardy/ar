@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "@reach/router"
 import styled from "@emotion/styled"
 
 const HeaderContainer = styled("div")`
@@ -6,10 +7,10 @@ const HeaderContainer = styled("div")`
   padding-bottom: 3em;
 `
 
-// const HeaderContent = styled("div")`
-//     display: flex;
-//     justify-content: space-between;
-// `
+const HeaderContent = styled("div")`
+  display: flex;
+  justify-content: space-between;
+`
 
 // const HeaderLinks = styled("div")`
 //     display: grid;
@@ -70,23 +71,21 @@ const HeaderContainer = styled("div")`
 
 const Header = () => (
   <HeaderContainer>
-    {/*<HeaderContent>*/}
-    {/*    <Link to="/">*/}
-    {/*        /!*<Logo/>*!/*/}
-    {/*    </Link>*/}
-    {/*    <HeaderLinks>*/}
-    {/*        <Link*/}
-    {/*            activeClassName="Link--is-active"*/}
-    {/*            to="/work">*/}
-    {/*            Project*/}
-    {/*        </Link>*/}
-    {/*        <Link*/}
-    {/*            activeClassName="Link--is-active"*/}
-    {/*            to="/blog">*/}
-    {/*            Blog*/}
-    {/*        </Link>*/}
-    {/*    </HeaderLinks>*/}
-    {/*</HeaderContent>*/}
+    <HeaderContent>
+      <Link to="/" />
+      {/*<HeaderLinks>*/}
+      {/*    <Link*/}
+      {/*        activeClassName="Link--is-active"*/}
+      {/*        to="/project">*/}
+      {/*        Project*/}
+      {/*    </Link>*/}
+      {/*    <Link*/}
+      {/*        activeClassName="Link--is-active"*/}
+      {/*        to="/blog">*/}
+      {/*        Blog*/}
+      {/*    </Link>*/}
+      {/*</HeaderLinks>*/}
+    </HeaderContent>
   </HeaderContainer>
 )
 
