@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
+import ReactCSSTransitionGroup from "react-addons-css-transition-group"
 
 const Hero = styled("div")`
   padding-top: 2.5em;
@@ -73,6 +74,15 @@ const Hero = styled("div")`
         }
       }
     }
+  }
+
+  .fade-appear {
+    opacity: 0.01;
+  }
+
+  .fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity .7s ease-in;
   }
 `
 
@@ -175,68 +185,73 @@ const RenderBody = ({ meta }) => (
       ].concat(meta)}
     />
     <Hero>
-      <h1>
-        <span role={"img"} aria-label={"broken-heart"}>
-          💔
-        </span>{" "}
-        something has <a href={"/"}>crush</a>ed.
-      </h1>
-      <p>
-        apologize, i'm not in mood to update my own website atm.
-        <br />
-        here some links for you,
-      </p>
-      <IconBar>
-        <a
-          href="https://soundcloud.com/ezralazuardy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faSoundcloud} />
-        </a>
-        <a
-          href="https://stackoverflow.com/users/8109202/ezra-lazuardy?tab=profile"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faStackOverflow} />
-        </a>
-        <a
-          href="https://www.hackerrank.com/ezralazuardy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faHackerrank} />
-        </a>
-        <a
-          href="https://github.com/ezralazuardy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a
-          href="https://medium.com/@ezralazuardy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faMedium} />
-        </a>
-        <a
-          href="https://linkedin.com/in/ezralazuardy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-        <a
-          href="mailto:ezralucio@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faEnvelopeSquare} />
-        </a>
-      </IconBar>
+      <ReactCSSTransitionGroup
+        transitionName="fade"
+        transitionAppear={true}
+        transitionAppearTimeout={600}>
+        <h1>
+          <span role={"img"} aria-label={"broken-heart"}>
+            💔
+          </span>{" "}
+          something has <a href={"/"}>crush</a>ed.
+        </h1>
+        <p>
+          apologize, i'm not in mood to update my own website atm.
+          <br />
+          here some links for you,
+        </p>
+        <IconBar>
+          <a
+            href="https://soundcloud.com/ezralazuardy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faSoundcloud} />
+          </a>
+          <a
+            href="https://stackoverflow.com/users/8109202/ezra-lazuardy?tab=profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faStackOverflow} />
+          </a>
+          <a
+            href="https://www.hackerrank.com/ezralazuardy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faHackerrank} />
+          </a>
+          <a
+            href="https://github.com/ezralazuardy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a
+            href="https://medium.com/@ezralazuardy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faMedium} />
+          </a>
+          <a
+            href="https://linkedin.com/in/ezralazuardy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a
+            href="mailto:ezralucio@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faEnvelopeSquare} />
+          </a>
+        </IconBar>
+      </ReactCSSTransitionGroup>
     </Hero>
 
     {/*<Section>*/}
