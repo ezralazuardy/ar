@@ -10,6 +10,8 @@ import {
   faStackOverflow,
   faHackerrank,
   faGithub,
+  faTwitter,
+  faInstagram,
   faMedium,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
@@ -31,6 +33,14 @@ const SocialIcons = [
   {
     image: faGithub,
     link: "https://github.com/ezralazuardy",
+  },
+  {
+    image: faTwitter,
+    link: "https://twitter.com/ezralazuardyy",
+  },
+  {
+    image: faInstagram,
+    link: "https://instagram.com/ezralazuardyy",
   },
   {
     image: faMedium,
@@ -147,21 +157,6 @@ const Hero = styled("div")`
 //             transition: transform 150ms ease-in-out;
 //         }
 //     }
-// `
-
-// const IconBar = styled("div")`
-//   font-size: 1.5rem;
-//   a {
-//     cursor: pointer;
-//     transition: all 100ms ease-in-out;
-//     color: black;
-//     margin-right: 1.8rem;
-//     &:hover {
-//       cursor: pointer;
-//       transition: all 100ms ease-in-out;
-//       color: ${colors.red600};
-//     }
-//   }
 // `
 
 const Home = ({ meta }) => (
