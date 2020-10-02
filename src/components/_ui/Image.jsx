@@ -1,11 +1,44 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-const Image = ({ data }) => <Img />
+const Image = props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        images: allFile {
+          edges {
+            node {
+              relativePath
+              name
+              childImageSharp {
+                fluid {
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={ data => {
+      if( !props.filename) return null;
+      const image = data.images.edges.find(n => {
+        return n.node.relativePath.includes(props.filename);
+      });
+      if (!image) return null;
+      return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} />;
+    }}
+  />
+);
 
-export default Image
-
-Image.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+export default Image;

@@ -4,62 +4,15 @@ import styled from "@emotion/styled"
 import colors from "../styles/colors"
 import dimensions from "../styles/dimensions"
 import Layout from "../components/Layout"
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
-import {
-  faSoundcloud,
-  faStackOverflow,
-  faHackerrank,
-  faGithub,
-  faTwitter,
-  faInstagram,
-  faMedium,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons"
-import IconBar from "../components/_ui/IconBar"
-
-const SocialIcons = [
-  {
-    image: faSoundcloud,
-    link: "https://soundcloud.com/ezralazuardy",
-  },
-  {
-    image: faStackOverflow,
-    link: "https://stackoverflow.com/users/8109202/ezra-lazuardy?tab=profile",
-  },
-  {
-    image: faHackerrank,
-    link: "https://www.hackerrank.com/ezralazuardy",
-  },
-  {
-    image: faGithub,
-    link: "https://github.com/ezralazuardy",
-  },
-  {
-    image: faTwitter,
-    link: "https://twitter.com/ezralazuardyy",
-  },
-  {
-    image: faInstagram,
-    link: "https://instagram.com/ezralazuardyy",
-  },
-  {
-    image: faMedium,
-    link: "https://medium.com/@ezralazuardy",
-  },
-  {
-    image: faLinkedin,
-    link: "https://linkedin.com/in/ezralazuardy",
-  },
-  {
-    image: faEnvelopeSquare,
-    link: "mailto:ezralucio@gmail.com",
-  },
-]
+import LongCard from "../components/LongCard"
+import About from "../components/About"
+import Button from "../components/_ui/Button"
+import Image from "../components/_ui/Image"
 
 const Hero = styled("div")`
   padding-top: 2.5em;
   padding-bottom: 3em;
-  margin-bottom: 6em;
+  margin-bottom: 1em;
   max-width: 830px;
 
   @media (max-width: ${dimensions.maxWidthMobile}px) {
@@ -115,49 +68,59 @@ const Hero = styled("div")`
   }
 `
 
-// const Section = styled("div")`
-//     margin-bottom: 10em;
-//     display: flex;
-//     flex-direction: column;
-//
-//     @media(max-width:${dimensions.maxWidthTablet}px) {
-//         margin-bottom: 4em;
-//     }
-//
-//     &:last-of-type {
-//         margin-bottom: 0;
-//     }
-// `
+const Section = styled("div")`
+    margin-bottom: 7em;
+    display: flex;
+    flex-direction: column;
 
-// const WorkAction = styled(Link)`
-//     font-weight: 600;
-//     text-decoration: none;
-//     color: currentColor;
-//     transition: all 150ms ease-in-out;
-//     margin-left: auto;
-//
-//     @media(max-width:${dimensions.maxWidthTablet}px) {
-//        margin: 0 auto;
-//     }
-//
-//     span {
-//         margin-left: 1em;
-//         transform: translateX(-8px);
-//         display: inline-block;
-//         transition: transform 400ms ease-in-out;
-//     }
-//
-//     &:hover {
-//         color: ${colors.blue500};
-//         transition: all 150ms ease-in-out;
-//
-//         span {
-//             transform: translateX(0px);
-//             opacity: 1;
-//             transition: transform 150ms ease-in-out;
-//         }
-//     }
-// `
+    @media(max-width:${dimensions.maxWidthTablet}px) {
+        margin-bottom: 4em;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+`
+
+const KKSIBanner = styled("div")`
+  margin-top: 2.2rem;
+  img {
+    max-width: 360px;
+    max-height: 52px;
+  }
+`
+
+const helperModules = [
+  {
+    title: "Penyiapan Unity",
+    description: "Instalasi dan Konfigurasi Software IDE Unity",
+    image: "unity.png",
+    downloadLink: "https://docs.google.com/document/d/164vL5IYTCh7l7sICxVBORulaPEsgbkwUXWghwL0HHcI/edit?usp=sharing"
+  },
+  {
+    title: "Penyiapan Vuforia",
+    description: "Instalasi dan Konfigurasi Pustaka Vuforia untuk Unity",
+    image: "vuforia.png",
+    downloadLink: "https://docs.google.com/document/d/1ZZOCkPFXdWhcZqb82ZYXhYRm198LuXu6KyTk3IYbd5A/edit?usp=sharing"
+  },
+  {
+    title: "Penyiapan Blender",
+    description: "Instalasi dan Pengenalan Software Blender",
+    image: "blender.png",
+    downloadLink: "https://docs.google.com/document/d/1yK6H-tW1Xq9zfeT2BzprNuU4rTuMDxduOsWRXWMBOjI/edit?usp=sharing"
+  }
+]
+
+const socialLinks = [
+  {
+    text: "KKSI 2019",
+    url: "http://103.40.55.195/kksi"
+  },
+  {
+    text: "KKSI 2020",
+    url: "http://103.40.55.195/kksi2020"
+  }
+]
 
 const Home = ({ meta }) => (
   <>
@@ -200,40 +163,70 @@ const Home = ({ meta }) => (
     />
     <Hero>
       <h1>
-        <span role={"img"} aria-label={"broken-heart"}>
-          💔
-        </span>{" "}
-        something has <a href={"/"}>crush</a>ed.
+        <span role={"img"} aria-label={"book"}>📖 </span>
+        <span>KKSI Augmented Reality</span>
       </h1>
       <p>
-        apologize, i'm not in mood to update my own website atm.
-        <br />
-        here some links for you,
+        Laman ini memuat rangkuman modul pembantu, referensi, dan dokumentasi untuk KKSI tahun 2020 bidang
+        Teknologi AR/VR.<br/><br/>
+        <a
+          href="http://103.40.55.195/kksi2020/arvr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="Button--secondary">Detail Acara</Button>
+        </a>
       </p>
-      <IconBar icons={SocialIcons} />
+      <KKSIBanner>
+        <Image alt={"Logo KKSI"} filename={"kksi.png"} />
+      </KKSIBanner>
     </Hero>
-    {/*<Section>*/}
-    {/*    {projects.map((project, i) => (*/}
-    {/*        <ProjectCard*/}
-    {/*            key={i}*/}
-    {/*            category={project.node.project_category}*/}
-    {/*            title={project.node.project_title}*/}
-    {/*            description={project.node.project_preview_description}*/}
-    {/*            thumbnail={project.node.project_preview_thumbnail}*/}
-    {/*            uid={project.node._meta.uid}*/}
-    {/*        />*/}
-    {/*    ))}*/}
-    {/*    <WorkAction to={"/work"}>*/}
-    {/*        See more work <span>&#8594;</span>*/}
-    {/*    </WorkAction>*/}
-    {/*</Section>*/}
-    {/*<Section>*/}
-    {/*    {RichText.render(home.about_title)}*/}
-    {/*    <About*/}
-    {/*        bio={home.about_bio}*/}
-    {/*        socialLinks={home.about_links}*/}
-    {/*    />*/}
-    {/*</Section>*/}
+    <Section>
+      <h2>Modul Pembantu</h2>
+      <br/>
+      {helperModules.map((module, i) => (
+        <LongCard
+          key={i}
+          title={module.title}
+          description={module.description}
+          image={module.image}
+          downloadLink={module.downloadLink}
+        />
+      ))}
+    </Section>
+    <Section>
+      <h2>Rekaman Pertemuan Daring</h2>
+      <p>
+        <span>Rekaman pertemuan daring saat ini belum tersedia </span>
+        <span role={"img"} aria-label={"confused"}>😕.</span>
+      </p>
+    </Section>
+    <Section>
+      <h2>Referensi</h2>
+      <p>
+        <span>Referensi saat ini belum tersedia </span>
+        <span role={"img"} aria-label={"confused"}>😕.</span>
+      </p>
+    </Section>
+    <Section>
+        <h2>Tentang</h2>
+        <About
+            bio={<>
+              Laman web ini digunakan untuk kepentingan dokumentasi KKSI tahun 2020 di bidang Tenologi AR/VR.
+              Ditulis dengan 💔 oleh
+              <a
+                href="https://ezralazuardy.com"
+                target="_blank"
+                rel="noopener noreferrer"> Ezra Lazuardy</a>
+              <span> dan </span>
+              <a
+                href="https://www.instagram.com/ayubi_/"
+                target="_blank"
+                rel="noopener noreferrer">Salahudin Al Ayubi</a>.
+            </>}
+            socialLinks={socialLinks}
+        />
+    </Section>
   </>
 )
 

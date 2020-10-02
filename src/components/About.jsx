@@ -63,6 +63,11 @@ const AboutBio = styled("div")`
   @media (max-width: ${dimensions.maxWidthMobile}px) {
     grid-row: 2;
   }
+  
+  a {
+    color: #6F9DEC;
+    text-decoration: none;
+  }
 `
 
 const AboutActions = styled("div")`
@@ -82,23 +87,23 @@ const About = ({ bio, socialLinks }) => (
       {socialLinks.map((social, i) => (
         <AboutLink
           key={i}
-          href={social.about_link[0].spans[0].data.url}
+          href={social.url}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {social.about_link[0].text}
+          {social.text}
           <span>&#8594;</span>
         </AboutLink>
       ))}
     </AboutLinkContainer>
-    <AboutBio>{RichText.render(bio)}</AboutBio>
+    <AboutBio><p>{bio}</p></AboutBio>
     <AboutActions>
       <a
-        href="mailto:ezralucio@gmail.com"
+        href="mailto:ezra.kksi@smkn7semarang.sch.id"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Button className="Button--secondary">Email me</Button>
+        <Button className="Button--secondary">Kontak</Button>
       </a>
     </AboutActions>
   </AboutContainer>

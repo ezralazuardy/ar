@@ -4,11 +4,12 @@ import styled from "@emotion/styled"
 import dimensions from "../styles/dimensions"
 import colors from "../styles/colors"
 import PropTypes from "prop-types"
+import Image from "./_ui/Image"
 
-const ProjectCardContainer = styled(Link)`
+const LongCardContainer = styled(Link)`
   display: grid;
   grid-template-columns: 4fr 7fr;
-  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.15);
   margin-bottom: 4em;
   transition: all 150ms ease-in-out;
   text-decoration: none;
@@ -27,10 +28,10 @@ const ProjectCardContainer = styled(Link)`
   }
 
   &:hover {
-    box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.25);
     transition: all 150ms ease-in-out;
 
-    .ProjectCardAction {
+    .LongCardAction {
       color: ${colors.blue500};
       transition: all 150ms ease-in-out;
 
@@ -41,19 +42,19 @@ const ProjectCardContainer = styled(Link)`
       }
     }
 
-    .ProjectCardContent::before {
+    .LongCardContent::before {
       opacity: 0.02;
       transition: all 150ms ease-in-out;
     }
 
-    .ProjectCardImageContainer::before {
+    .LongCardImageContainer::before {
       opacity: 0.2;
       transition: all 150ms ease-in-out;
     }
   }
 `
 
-const ProjectCardContent = styled("div")`
+const LongCardContent = styled("div")`
   background: white;
   padding: 4em 3em 2.25em 3em;
   position: relative;
@@ -80,17 +81,12 @@ const ProjectCardContent = styled("div")`
   }
 `
 
-const ProjectCardCategory = styled("h6")`
-  font-weight: 600;
-  color: ${colors.grey600};
-`
-
-const ProjectCardTitle = styled("h3")`
+const LongCardTitle = styled("h3")`
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 `
 
-const ProjectCardBlurb = styled("div")`
+const LongCardBlurb = styled("div")`
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 5em;
@@ -100,7 +96,7 @@ const ProjectCardBlurb = styled("div")`
   }
 `
 
-const ProjectCardAction = styled("div")`
+const LongCardAction = styled("div")`
   font-weight: 600;
   text-decoration: none;
   color: currentColor;
@@ -114,22 +110,19 @@ const ProjectCardAction = styled("div")`
   }
 `
 
-const ProjectCardImageContainer = styled("div")`
+const LongCardImageContainer = styled("div")`
   background: ${colors.grey200};
-  display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   position: relative;
-  padding-left: 2em;
-  padding-right: 2em;
 
   @media (max-width: ${dimensions.maxWidthTablet}px) {
-    padding-top: 3em;
+    min-height: 100px;
     max-height: 200px;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   &:before {
@@ -146,38 +139,31 @@ const ProjectCardImageContainer = styled("div")`
   }
 
   img {
-    max-width: 400px;
     width: 100%;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.04);
-
-    @media (max-width: ${dimensions.maxWidthTablet}px) {
-      max-width: 300px;
-    }
   }
 `
 
-const ProjectCard = ({ category, title, description, thumbnail, uid }) => (
-  <ProjectCardContainer to={`/work/${uid}`}>
-    <ProjectCardContent className="ProjectCardContent">
-      <ProjectCardCategory>{category[0].text}</ProjectCardCategory>
-      <ProjectCardTitle>{title[0].text}</ProjectCardTitle>
-      <ProjectCardBlurb>{description}</ProjectCardBlurb>
-      <ProjectCardAction className="ProjectCardAction">
-        Details <span>&#8594;</span>
-      </ProjectCardAction>
-    </ProjectCardContent>
-    <ProjectCardImageContainer className="ProjectCardImageContainer">
-      <img src={thumbnail.url} alt={title[0].text} />
-    </ProjectCardImageContainer>
-  </ProjectCardContainer>
+const LongCard = ({ title, description, image, downloadLink }) => (
+  <LongCardContainer to={downloadLink} target="_blank" rel="noopener noreferrer">
+    <LongCardContent className="LongCardContent">
+      <LongCardTitle>{title}</LongCardTitle>
+      <LongCardBlurb>{description}</LongCardBlurb>
+      <LongCardAction className="LongCardAction">
+        Baca <span>&#8594;</span>
+      </LongCardAction>
+    </LongCardContent>
+    <LongCardImageContainer className="LongCardImageContainer">
+      <Image alt={title} filename={image} />
+    </LongCardImageContainer>
+  </LongCardContainer>
 )
 
-export default ProjectCard
+export default LongCard
 
-ProjectCard.propTypes = {
-  category: PropTypes.array.isRequired,
-  thumbnail: PropTypes.object.isRequired,
-  title: PropTypes.array.isRequired,
-  description: PropTypes.array.isRequired,
-  uid: PropTypes.string.isRequired,
+LongCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  downloadLink: PropTypes.string.isRequired,
 }

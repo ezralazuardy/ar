@@ -6,7 +6,6 @@ import { Global } from "@emotion/core"
 import globalStyles from "../styles/global"
 import typeStyles from "../styles/typography"
 import dimensions from "../styles/dimensions"
-import Header from "../components/Header"
 import "../styles/fonts.scss"
 
 const LayoutContainer = styled.div`
@@ -51,7 +50,7 @@ const Layout = ({ children }) => (
         <LayoutContainer className="div">
           <Global styles={[globalStyles, typeStyles]} />
           <div className="Layout">
-            <Header />
+            <br/>
             <main className="Layout__content">{childrenWithProps}</main>
           </div>
         </LayoutContainer>
