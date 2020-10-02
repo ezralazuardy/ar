@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Dokumentasi KKSI AR`,
-    description: `Laman dokumentasi untuk KKSI Augmented Reality.`,
+    description: `Web dokumentasi untuk KKSI 2020 bidang teknologi AR/VR.`,
     author: `Ezra Lazuardy | ezralazuardy.com`,
   },
   plugins: [
