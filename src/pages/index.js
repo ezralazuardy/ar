@@ -93,19 +93,19 @@ const KKSIBanner = styled("div")`
 const helperModules = [
   {
     title: "Penyiapan Unity",
-    description: "Instalasi dan Konfigurasi Software IDE Unity",
+    description: "Instalasi dan Konfigurasi Software Unity IDE",
     image: "unity.png",
     downloadLink: "https://docs.google.com/document/d/164vL5IYTCh7l7sICxVBORulaPEsgbkwUXWghwL0HHcI/edit?usp=sharing"
   },
   {
     title: "Penyiapan Vuforia",
-    description: "Instalasi dan Konfigurasi Pustaka Vuforia untuk Unity",
+    description: "Instalasi dan Konfigurasi Vuforia SDK untuk Unity",
     image: "vuforia.png",
     downloadLink: "https://docs.google.com/document/d/1ZZOCkPFXdWhcZqb82ZYXhYRm198LuXu6KyTk3IYbd5A/edit?usp=sharing"
   },
   {
     title: "Penyiapan Blender",
-    description: "Instalasi dan Pengenalan Software Blender",
+    description: "Instalasi dan Konfigurasi Software Blender",
     image: "blender.png",
     downloadLink: "https://docs.google.com/document/d/1yK6H-tW1Xq9zfeT2BzprNuU4rTuMDxduOsWRXWMBOjI/edit?usp=sharing"
   }
