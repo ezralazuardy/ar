@@ -1,3 +1,3 @@
-## ezralazuardy.com
+## ar.ezralazuardy.com
 
-Ezra Lazuardy's profile website. Check it out at https://ezralazuardy.com.
+Documentation Website for KKSI 2020 AR/VR Technology.
