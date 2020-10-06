@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import dimensions from "../styles/dimensions"
-import colors from "../styles/colors"
+import dimensions from "../../styles/dimensions"
+import colors from "../../styles/colors"
 import PropTypes from "prop-types"
-import Image from "./_ui/Image"
+import Image from "./Image"
 
-const LongCardContainer = styled(Link)`
+const LongImageCardContainer = styled(Link)`
   display: grid;
   grid-template-columns: 4fr 7fr;
   box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.15);
@@ -31,7 +31,7 @@ const LongCardContainer = styled(Link)`
     box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.25);
     transition: all 150ms ease-in-out;
 
-    .LongCardAction {
+    .LongImageCardAction {
       color: ${colors.blue500};
       transition: all 150ms ease-in-out;
 
@@ -42,19 +42,19 @@ const LongCardContainer = styled(Link)`
       }
     }
 
-    .LongCardContent::before {
+    .LongImageCardContent::before {
       opacity: 0.02;
       transition: all 150ms ease-in-out;
     }
 
-    .LongCardImageContainer::before {
+    .LongImageCardImageContainer::before {
       opacity: 0.2;
       transition: all 150ms ease-in-out;
     }
   }
 `
 
-const LongCardContent = styled("div")`
+const LongImageCardContent = styled("div")`
   background: white;
   padding: 4em 3em 2.25em 3em;
   position: relative;
@@ -81,12 +81,12 @@ const LongCardContent = styled("div")`
   }
 `
 
-const LongCardTitle = styled("h3")`
+const LongImageCardTitle = styled("h3")`
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 `
 
-const LongCardBlurb = styled("div")`
+const LongImageCardBlurb = styled("div")`
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 5em;
@@ -96,7 +96,7 @@ const LongCardBlurb = styled("div")`
   }
 `
 
-const LongCardAction = styled("div")`
+const LongImageCardAction = styled("div")`
   font-weight: 600;
   text-decoration: none;
   color: currentColor;
@@ -110,7 +110,7 @@ const LongCardAction = styled("div")`
   }
 `
 
-const LongCardImageContainer = styled("div")`
+const LongImageCardImageContainer = styled("div")`
   background: ${colors.grey200};
   justify-content: center;
   align-items: center;
@@ -144,26 +144,27 @@ const LongCardImageContainer = styled("div")`
   }
 `
 
-const LongCard = ({ title, description, image, downloadLink }) => (
-  <LongCardContainer to={downloadLink} target="_blank" rel="noopener noreferrer">
-    <LongCardContent className="LongCardContent">
-      <LongCardTitle>{title}</LongCardTitle>
-      <LongCardBlurb>{description}</LongCardBlurb>
-      <LongCardAction className="LongCardAction">
-        Baca <span>&#8594;</span>
-      </LongCardAction>
-    </LongCardContent>
-    <LongCardImageContainer className="LongCardImageContainer">
+const LongImageCard = ({ title, description, image, buttonText, link }) => (
+  <LongImageCardContainer to={link} target="_blank" rel="noopener noreferrer">
+    <LongImageCardContent className="LongImageCardContent">
+      <LongImageCardTitle>{title}</LongImageCardTitle>
+      <LongImageCardBlurb>{description}</LongImageCardBlurb>
+      <LongImageCardAction className="LongImageCardAction">
+        {buttonText} <span>&#8594;</span>
+      </LongImageCardAction>
+    </LongImageCardContent>
+    <LongImageCardImageContainer className="LongImageCardImageContainer">
       <Image alt={title} filename={image} />
-    </LongCardImageContainer>
-  </LongCardContainer>
+    </LongImageCardImageContainer>
+  </LongImageCardContainer>
 )
 
-export default LongCard
+export default LongImageCard
 
-LongCard.propTypes = {
+LongImageCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  downloadLink: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired
 }

@@ -2,7 +2,7 @@ import React from "react"
 import Moment from "react-moment"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import colors from "../styles/colors"
+import colors from "../../styles/colors"
 import PropTypes from "prop-types"
 
 const PostCardContainer = styled(Link)`
@@ -64,6 +64,7 @@ const PostDate = styled("div")`
 const PostDescription = styled("div")`
   margin-top: 2em;
   margin-bottom: 4em;
+  min-height: 75px;
 
   p:last-of-type {
     margin: 0;
@@ -84,13 +85,13 @@ const PostCardAction = styled("div")`
   }
 `
 
-const PostCard = ({ author, category, date, title, description, uid }) => (
-  <PostCardContainer className="BlogPostCard" to={`/blog/${uid}`}>
-    <PostCategory>{category[0].text}</PostCategory>
-    <PostTitle>{title[0].text}</PostTitle>
+const PostCard = ({ title, author, category, date, description, buttonText, link }) => (
+  <PostCardContainer to={link} target="_blank" rel="noopener noreferrer">
+    <PostCategory>{category}</PostCategory>
+    <PostTitle>{title}</PostTitle>
     <PostDescription>{description}</PostDescription>
     <PostCardAction className="PostCardAction">
-      Read more <span>&#8594;</span>
+      {buttonText} <span>&#8594;</span>
     </PostCardAction>
     <PostMetas>
       <PostAuthor>{author}</PostAuthor>
@@ -104,10 +105,11 @@ const PostCard = ({ author, category, date, title, description, uid }) => (
 export default PostCard
 
 PostCard.propTypes = {
+  title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  category: PropTypes.array.isRequired,
+  category: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  title: PropTypes.array.isRequired,
-  description: PropTypes.array.isRequired,
-  uid: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired
 }

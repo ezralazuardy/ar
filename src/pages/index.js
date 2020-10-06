@@ -4,10 +4,12 @@ import styled from "@emotion/styled"
 import colors from "../styles/colors"
 import dimensions from "../styles/dimensions"
 import Layout from "../components/Layout"
-import LongCard from "../components/LongCard"
 import About from "../components/About"
-import Button from "../components/_ui/Button"
+import LongImageCard from "../components/_ui/LongImageCard"
+import ImageCard from "../components/_ui/ImageCard"
+import PostCard from "../components/_ui/PostCard"
 import Image from "../components/_ui/Image"
+import Button from "../components/_ui/Button"
 
 const Hero = styled("div")`
   padding-top: 2.5em;
@@ -82,11 +84,41 @@ const Section = styled("div")`
     }
 `
 
+const ButtonBar = styled("div")`
+  margin-top: 2rem;
+
+  @media (max-width: ${dimensions.maxWidthMobile}px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+`
+
+const ButtonBarRow = styled("a")`
+  margin-right: 1rem;
+`
+
 const KKSIBanner = styled("div")`
-  margin-top: 2.2rem;
+  margin-top: 2rem;
   img {
-    max-width: 360px;
-    max-height: 52px;
+    max-width: 369px;
+    max-height: 54px;
+  }
+`
+
+const PostGrid = styled("div")`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.5em;
+
+  @media (max-width: 1050px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5em;
+  }
+
+  @media (max-width: ${dimensions.maxWidthMobile}px) {
+    grid-template-columns: 1fr;
+    grid-gap: 2.5em;
   }
 `
 
@@ -95,19 +127,133 @@ const helperModules = [
     title: "Penyiapan Unity",
     description: "Instalasi dan Konfigurasi Software Unity IDE",
     image: "unity.png",
+    buttonText: "Baca",
     downloadLink: "https://docs.google.com/document/d/164vL5IYTCh7l7sICxVBORulaPEsgbkwUXWghwL0HHcI/edit?usp=sharing"
   },
   {
     title: "Penyiapan Vuforia",
     description: "Instalasi dan Konfigurasi Vuforia SDK untuk Unity",
     image: "vuforia.png",
-    downloadLink: "https://docs.google.com/document/d/1ZZOCkPFXdWhcZqb82ZYXhYRm198LuXu6KyTk3IYbd5A/edit?usp=sharing"
+    buttonText: "Baca",
+    link: "https://docs.google.com/document/d/1ZZOCkPFXdWhcZqb82ZYXhYRm198LuXu6KyTk3IYbd5A/edit?usp=sharing"
   },
   {
     title: "Penyiapan Blender",
     description: "Instalasi dan Konfigurasi Software Blender",
     image: "blender.png",
-    downloadLink: "https://docs.google.com/document/d/1yK6H-tW1Xq9zfeT2BzprNuU4rTuMDxduOsWRXWMBOjI/edit?usp=sharing"
+    buttonText: "Baca",
+    link: "https://docs.google.com/document/d/1yK6H-tW1Xq9zfeT2BzprNuU4rTuMDxduOsWRXWMBOjI/edit?usp=sharing"
+  }
+]
+
+const assets = [
+  {
+    title: "Gambar Latar Aplikasi",
+    category: "Aset Proyek",
+    description: "Gambar latar (background) aplikasi AR yang digunakan pada pembelajaran sesi 5",
+    image: "rar.png",
+    referenceLink: "https://drive.google.com/file/d/1rfjppJngYM8yS6nXAilH_cLMkZK0WQ02/view?usp=sharing"
+  },
+  {
+    title: "Image Target",
+    category: "Aset Proyek",
+    description: "Image Target AR yang digunakan pada pembelajaran sesi 8",
+    image: "rar.png",
+    referenceLink: "https://drive.google.com/file/d/1-EPVaY0mlfekLhUMqO4ueixhXol13bsy/view?usp=sharing"
+  }
+]
+
+const recordedVideos = [
+  {
+    title: "Pertemuan 3",
+    author: "Alfan Pujo Laksono",
+    category: "Rekaman Daring",
+    date: "09/30/2020",
+    description: "Pengenalan Augmented Reality",
+    buttonText: "Tonton",
+    videoLink: "https://youtu.be/uGU8ngSaYhs"
+  },
+  {
+    title: "Pertemuan 4",
+    author: "Tim SMK Negeri 7 Semarang",
+    category: "Rekaman Daring",
+    date: "10/06/2020",
+    description: "Pra Produksi Instalasi dan Konfigurasi Unity, Vuforia, Android SDK, dan Blender",
+    buttonText: "Tonton",
+    videoLink: "https://youtu.be/mvFF7KsZ5lg"
+  }
+]
+
+const references = [
+  {
+    title: "Unity untuk Pemula",
+    category: "Playlist Youtube",
+    description: "Dasar-dasar penggunaan software Unity IDE untuk pemula",
+    image: "video.png",
+    referenceLink: "https://www.youtube.com/playlist?list=PL0mnovdNUHinN9ssNIb-d0LxNo20Zgvs3"
+  },
+  {
+    title: "Membuat Interface Aplikasi dengan Unity",
+    category: "Playlist Youtube",
+    description: "Pembuatan User Interface aplikasi dengan Unity",
+    image: "video.png",
+    referenceLink: "https://www.youtube.com/playlist?list=PL0mnovdNUHikNDRY6z6W4zcJFsioWc19H"
+  },
+  {
+    title: "Penggunaan Vuforia pada Unity",
+    category: "Playlist Youtube",
+    description: "Implementasi AR menggunakan Vuforia pada Unity",
+    image: "video.png",
+    referenceLink: "https://www.youtube.com/playlist?list=PLX2vGYjWbI0Thl0pOCbKWrbbiw7RWiRG7"
+  },
+  {
+    title: "Buku Panduan Augmented Reality",
+    category: "Dokumen",
+    description: "Panduan singkat tentang teknologi Augmented Reality secara general",
+    image: "pdf.png",
+    referenceLink: "https://drive.google.com/file/d/1s6Wzfp7a8gbIRNYWObljQ89IPHAknc7d/view?usp=sharing"
+  },
+  {
+    title: "Pembuatan Proyek AR dengan Unity",
+    category: "Dokumen",
+    description: "Pembuatan proyek aplikasi Augmented Reality dengan Unity",
+    image: "pdf.png",
+    referenceLink: "https://drive.google.com/file/d/1b-h25VvNw0qRqsZFSWc3t64uFFKIA2MZ/view?usp=sharing"
+  },
+  {
+    title: "Aspek Hukum dari Bisnis Daring",
+    category: "Dokumen",
+    description: "Presentasi tentang aspek hukum dari bisnis daring oleh FH UNPAD",
+    image: "pdf.png",
+    referenceLink: "https://drive.google.com/file/d/1zULBvA4ESH9dUSxQwsqsm1q9f0TQnS4u/view?usp=sharing"
+  },
+  {
+    title: "Belajar Bisnis bersama SIKEPO",
+    category: "Dokumen",
+    description: "Presentasi tentang pembelajaran bisnis oleh SMK TI Cimahi",
+    image: "pdf.png",
+    referenceLink: "https://drive.google.com/file/d/1qZBGzWskrHW_MjuaHjy8vCyRJ-iwLZRK/view?usp=sharing"
+  },
+  {
+    title: "Bisnis Daring dan Pemasaran",
+    category: "Dokumen",
+    description: "Presentasi tentang bisnis daring dan pemasaran oleh SMK Metland School",
+    image: "pdf.png",
+    referenceLink: "https://drive.google.com/file/d/1uZjk95m58JSWuizr0NFn-QPKEB91X4Vw/view?usp=sharing"
+  },
+  {
+    title: "Pembukaan acara KKSI 2020",
+    category: "Dokumen",
+    description: "Presentasi pembukaan acara KKSI tahun 2020 oleh DITJEN DIKSI KEMDIKBUD",
+    image: "pdf.png",
+    referenceLink: "https://drive.google.com/file/d/1spgfKhbEDwKcl5tjabACZ6JBRxMvfuEi/view?usp=sharing"
+  },
+  {
+    title: "Kelas Daring Augmented Reality",
+    category: "Kelas Daring",
+    description: "Kelas daring untuk pengembangan dasar aplikasi Augmented Reality oleh SEAMOLEC",
+    image: "web.png",
+    referenceLink: "http://mooc.seamolec.org/courses/course-v1:SEAMOLEC+ARMDL01+2019_07/about"
   }
 ]
 
@@ -168,14 +314,30 @@ const Home = ({ meta }) => (
       </h1>
       <p>
         Laman ini memuat rangkuman modul pembantu, referensi, dan dokumentasi untuk KKSI tahun 2020 bidang
-        Teknologi AR/VR.<br/><br/>
-        <a
-          href="http://103.40.55.195/kksi2020/arvr"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button className="Button--secondary">Detail Acara</Button>
-        </a>
+        Teknologi AR/VR.
+        <ButtonBar>
+          <ButtonBarRow
+            href="http://103.40.55.195/kksi2020/arvr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="Button--secondary">Detail Acara</Button>
+          </ButtonBarRow>
+          <ButtonBarRow
+            href="https://drive.google.com/file/d/1j1PdbLoy_0RmSd-2niApPBKUMV6GdVjO/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="Button--secondary">Jadwal Acara</Button>
+          </ButtonBarRow>
+          <ButtonBarRow
+            href="https://t.me/kksi2020_augmented_reality"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="Button--secondary">Grup Telegram</Button>
+          </ButtonBarRow>
+        </ButtonBar>
       </p>
       <KKSIBanner>
         <Image alt={"Logo KKSI"} filename={"kksi.png"} />
@@ -183,30 +345,63 @@ const Home = ({ meta }) => (
     </Hero>
     <Section>
       <h2>Modul Pembantu</h2>
-      <br/>
       {helperModules.map((module, i) => (
-        <LongCard
+        <LongImageCard
           key={i}
           title={module.title}
           description={module.description}
           image={module.image}
-          downloadLink={module.downloadLink}
+          buttonText={module.buttonText}
+          link={module.link}
         />
       ))}
     </Section>
     <Section>
+      <h2>Contoh Aset</h2>
+      <PostGrid>
+        {assets.map((asset, i) => (
+          <ImageCard
+            key={i}
+            title={asset.title}
+            category={asset.category}
+            description={asset.description}
+            image={asset.image}
+            link={asset.referenceLink}
+          />
+        ))}
+      </PostGrid>
+    </Section>
+    <Section>
       <h2>Rekaman Pertemuan Daring</h2>
-      <p>
-        <span>Rekaman pertemuan daring saat ini belum tersedia </span>
-        <span role={"img"} aria-label={"confused"}>😕.</span>
-      </p>
+      <PostGrid>
+        {recordedVideos.map((video, i) => (
+          <PostCard
+            key={i}
+            title={video.title}
+            author={video.author}
+            category={video.category}
+            date={video.date}
+            description={video.description}
+            buttonText={video.buttonText}
+            link={video.videoLink}
+          />
+        ))}
+      </PostGrid>
     </Section>
     <Section>
       <h2>Referensi</h2>
-      <p>
-        <span>Referensi saat ini belum tersedia </span>
-        <span role={"img"} aria-label={"confused"}>😕.</span>
-      </p>
+      <PostGrid>
+        {references.map((reference, i) => (
+          <ImageCard
+            key={i}
+            title={reference.title}
+            category={reference.category}
+            description={reference.description}
+            image={reference.image}
+            link={reference.referenceLink}
+          />
+        ))}
+      </PostGrid>
     </Section>
     <Section>
         <h2>Tentang</h2>
