@@ -1,6 +1,6 @@
-import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Image = props => (
   <StaticQuery
@@ -30,15 +30,19 @@ const Image = props => (
         }
       }
     `}
-    render={ data => {
-      if( !props.filename) return null;
+    render={data => {
+      if (!props.filename) return null
       const image = data.images.edges.find(n => {
-        return n.node.relativePath.includes(props.filename);
-      });
-      if (!image) return null;
-      return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} />;
+        return n.node.relativePath.includes(props.filename)
+      })
+      if (!image) return null
+      return <Img
+        alt={props.alt}
+        fluid={image.node.childImageSharp.fluid}
+        imgStyle={{ objectFit: "contain" }}
+      />
     }}
   />
-);
+)
 
-export default Image;
+export default Image

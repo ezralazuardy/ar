@@ -100,10 +100,8 @@ const ButtonBarRow = styled("a")`
 
 const KKSIBanner = styled("div")`
   margin-top: 2rem;
-  picture {
-    max-width: 369px;
-    max-height: 54px;
-  }
+  width: 369px;
+  height: 54px;
 `
 
 const PostGrid = styled("div")`
