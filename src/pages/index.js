@@ -100,8 +100,8 @@ const ButtonBarRow = styled("a")`
 
 const KKSIBanner = styled("div")`
   margin-top: 2rem;
-  max-width: 369px;
-  max-height: 54px;
+  width: 369px !important;
+  height: 54px !important;
 `
 
 const PostGrid = styled("div")`
@@ -126,22 +126,22 @@ const helperModules = [
     description: "Instalasi dan Konfigurasi Software Unity IDE",
     image: "unity.png",
     buttonText: "Baca",
-    downloadLink: "https://docs.google.com/document/d/164vL5IYTCh7l7sICxVBORulaPEsgbkwUXWghwL0HHcI/edit?usp=sharing"
+    downloadLink: "https://docs.google.com/document/d/164vL5IYTCh7l7sICxVBORulaPEsgbkwUXWghwL0HHcI/edit?usp=sharing",
   },
   {
     title: "Penyiapan Vuforia",
     description: "Instalasi dan Konfigurasi Vuforia SDK untuk Unity",
     image: "vuforia.png",
     buttonText: "Baca",
-    link: "https://docs.google.com/document/d/1ZZOCkPFXdWhcZqb82ZYXhYRm198LuXu6KyTk3IYbd5A/edit?usp=sharing"
+    link: "https://docs.google.com/document/d/1ZZOCkPFXdWhcZqb82ZYXhYRm198LuXu6KyTk3IYbd5A/edit?usp=sharing",
   },
   {
     title: "Penyiapan Blender",
     description: "Instalasi dan Konfigurasi Software Blender",
     image: "blender.png",
     buttonText: "Baca",
-    link: "https://docs.google.com/document/d/1yK6H-tW1Xq9zfeT2BzprNuU4rTuMDxduOsWRXWMBOjI/edit?usp=sharing"
-  }
+    link: "https://docs.google.com/document/d/1yK6H-tW1Xq9zfeT2BzprNuU4rTuMDxduOsWRXWMBOjI/edit?usp=sharing",
+  },
 ]
 
 const assets = [
@@ -150,15 +150,15 @@ const assets = [
     category: "Aset Proyek",
     description: "Gambar latar (background) aplikasi AR yang digunakan pada pembelajaran sesi 5",
     image: "rar.png",
-    referenceLink: "https://drive.google.com/file/d/1rfjppJngYM8yS6nXAilH_cLMkZK0WQ02/view?usp=sharing"
+    referenceLink: "https://drive.google.com/file/d/1rfjppJngYM8yS6nXAilH_cLMkZK0WQ02/view?usp=sharing",
   },
   {
     title: "Image Target",
     category: "Aset Proyek",
     description: "Image Target AR yang digunakan pada pembelajaran sesi 8",
     image: "rar.png",
-    referenceLink: "https://drive.google.com/file/d/1-EPVaY0mlfekLhUMqO4ueixhXol13bsy/view?usp=sharing"
-  }
+    referenceLink: "https://drive.google.com/file/d/1-EPVaY0mlfekLhUMqO4ueixhXol13bsy/view?usp=sharing",
+  },
 ]
 
 const recordedVideos = [
@@ -169,7 +169,7 @@ const recordedVideos = [
     date: "09/30/2020",
     description: "Pengenalan Augmented Reality",
     buttonText: "Tonton",
-    videoLink: "https://youtu.be/uGU8ngSaYhs"
+    videoLink: "https://youtu.be/uGU8ngSaYhs",
   },
   {
     title: "Pertemuan 4",
@@ -178,8 +178,8 @@ const recordedVideos = [
     date: "10/06/2020",
     description: "Pra Produksi Instalasi dan Konfigurasi Unity, Vuforia, Android SDK, dan Blender",
     buttonText: "Tonton",
-    videoLink: "https://youtu.be/mvFF7KsZ5lg"
-  }
+    videoLink: "https://youtu.be/mvFF7KsZ5lg",
+  },
 ]
 
 const references = [
@@ -188,82 +188,82 @@ const references = [
     category: "Playlist Youtube",
     description: "Dasar-dasar penggunaan software Unity IDE untuk pemula",
     image: "video.png",
-    referenceLink: "https://www.youtube.com/playlist?list=PL0mnovdNUHinN9ssNIb-d0LxNo20Zgvs3"
+    referenceLink: "https://www.youtube.com/playlist?list=PL0mnovdNUHinN9ssNIb-d0LxNo20Zgvs3",
   },
   {
     title: "Membuat Interface Aplikasi dengan Unity",
     category: "Playlist Youtube",
     description: "Pembuatan User Interface aplikasi dengan Unity",
     image: "video.png",
-    referenceLink: "https://www.youtube.com/playlist?list=PL0mnovdNUHikNDRY6z6W4zcJFsioWc19H"
+    referenceLink: "https://www.youtube.com/playlist?list=PL0mnovdNUHikNDRY6z6W4zcJFsioWc19H",
   },
   {
     title: "Penggunaan Vuforia pada Unity",
     category: "Playlist Youtube",
     description: "Implementasi AR menggunakan Vuforia pada Unity",
     image: "video.png",
-    referenceLink: "https://www.youtube.com/playlist?list=PLX2vGYjWbI0Thl0pOCbKWrbbiw7RWiRG7"
+    referenceLink: "https://www.youtube.com/playlist?list=PLX2vGYjWbI0Thl0pOCbKWrbbiw7RWiRG7",
   },
   {
     title: "Buku Panduan Augmented Reality",
     category: "Dokumen",
     description: "Panduan singkat tentang teknologi Augmented Reality secara general",
     image: "pdf.png",
-    referenceLink: "https://drive.google.com/file/d/1s6Wzfp7a8gbIRNYWObljQ89IPHAknc7d/view?usp=sharing"
+    referenceLink: "https://drive.google.com/file/d/1s6Wzfp7a8gbIRNYWObljQ89IPHAknc7d/view?usp=sharing",
   },
   {
     title: "Pembuatan Proyek AR dengan Unity",
     category: "Dokumen",
     description: "Pembuatan proyek aplikasi Augmented Reality dengan Unity",
     image: "pdf.png",
-    referenceLink: "https://drive.google.com/file/d/1b-h25VvNw0qRqsZFSWc3t64uFFKIA2MZ/view?usp=sharing"
+    referenceLink: "https://drive.google.com/file/d/1b-h25VvNw0qRqsZFSWc3t64uFFKIA2MZ/view?usp=sharing",
   },
   {
     title: "Aspek Hukum dari Bisnis Daring",
     category: "Dokumen",
     description: "Presentasi tentang aspek hukum dari bisnis daring oleh FH UNPAD",
     image: "pdf.png",
-    referenceLink: "https://drive.google.com/file/d/1zULBvA4ESH9dUSxQwsqsm1q9f0TQnS4u/view?usp=sharing"
+    referenceLink: "https://drive.google.com/file/d/1zULBvA4ESH9dUSxQwsqsm1q9f0TQnS4u/view?usp=sharing",
   },
   {
     title: "Belajar Bisnis bersama SIKEPO",
     category: "Dokumen",
     description: "Presentasi tentang pembelajaran bisnis oleh SMK TI Cimahi",
     image: "pdf.png",
-    referenceLink: "https://drive.google.com/file/d/1qZBGzWskrHW_MjuaHjy8vCyRJ-iwLZRK/view?usp=sharing"
+    referenceLink: "https://drive.google.com/file/d/1qZBGzWskrHW_MjuaHjy8vCyRJ-iwLZRK/view?usp=sharing",
   },
   {
     title: "Bisnis Daring dan Pemasaran",
     category: "Dokumen",
     description: "Presentasi tentang bisnis daring dan pemasaran oleh SMK Metland School",
     image: "pdf.png",
-    referenceLink: "https://drive.google.com/file/d/1uZjk95m58JSWuizr0NFn-QPKEB91X4Vw/view?usp=sharing"
+    referenceLink: "https://drive.google.com/file/d/1uZjk95m58JSWuizr0NFn-QPKEB91X4Vw/view?usp=sharing",
   },
   {
     title: "Pembukaan acara KKSI 2020",
     category: "Dokumen",
     description: "Presentasi pembukaan acara KKSI tahun 2020 oleh DITJEN DIKSI KEMDIKBUD",
     image: "pdf.png",
-    referenceLink: "https://drive.google.com/file/d/1spgfKhbEDwKcl5tjabACZ6JBRxMvfuEi/view?usp=sharing"
+    referenceLink: "https://drive.google.com/file/d/1spgfKhbEDwKcl5tjabACZ6JBRxMvfuEi/view?usp=sharing",
   },
   {
     title: "Kelas Daring Augmented Reality",
     category: "Kelas Daring",
     description: "Kelas daring untuk pengembangan dasar aplikasi Augmented Reality oleh SEAMOLEC",
     image: "web.png",
-    referenceLink: "http://mooc.seamolec.org/courses/course-v1:SEAMOLEC+ARMDL01+2019_07/about"
-  }
+    referenceLink: "http://mooc.seamolec.org/courses/course-v1:SEAMOLEC+ARMDL01+2019_07/about",
+  },
 ]
 
 const socialLinks = [
   {
     text: "KKSI 2019",
-    url: "http://103.40.55.195/kksi"
+    url: "http://103.40.55.195/kksi",
   },
   {
     text: "KKSI 2020",
-    url: "http://103.40.55.195/kksi2020"
-  }
+    url: "http://103.40.55.195/kksi2020",
+  },
 ]
 
 const Home = ({ meta }) => (
@@ -338,7 +338,7 @@ const Home = ({ meta }) => (
         </ButtonBar>
       </p>
       <KKSIBanner>
-        <Image alt={"Logo KKSI"} filename={"kksi.png"} />
+        <Image alt={"Logo KKSI"} filename={"kksi.png"}/>
       </KKSIBanner>
     </Hero>
     <Section>
@@ -402,29 +402,29 @@ const Home = ({ meta }) => (
       </PostGrid>
     </Section>
     <Section>
-        <h2>Tentang</h2>
-        <About
-            bio={<>
-              Laman web ini digunakan untuk kepentingan dokumentasi KKSI tahun 2020 di bidang Tenologi AR/VR.
-              Ditulis dengan 💔 oleh
-              <a
-                href="https://ezralazuardy.com"
-                target="_blank"
-                rel="noopener noreferrer"> Ezra Lazuardy</a>
-              <span> dan </span>
-              <a
-                href="https://www.instagram.com/ayubi_/"
-                target="_blank"
-                rel="noopener noreferrer">Salahudin Al Ayubi</a>.
-            </>}
-            socialLinks={socialLinks}
-        />
+      <h2>Tentang</h2>
+      <About
+        bio={<>
+          Laman web ini digunakan untuk kepentingan dokumentasi KKSI tahun 2020 di bidang Tenologi AR/VR.
+          Ditulis dengan 💔 oleh
+          <a
+            href="https://ezralazuardy.com"
+            target="_blank"
+            rel="noopener noreferrer"> Ezra Lazuardy</a>
+          <span> dan </span>
+          <a
+            href="https://www.instagram.com/ayubi_/"
+            target="_blank"
+            rel="noopener noreferrer">Salahudin Al Ayubi</a>.
+        </>}
+        socialLinks={socialLinks}
+      />
     </Section>
   </>
 )
 
 export default () => (
   <Layout>
-    <Home />
+    <Home/>
   </Layout>
 )
