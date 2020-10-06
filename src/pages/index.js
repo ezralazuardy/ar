@@ -100,11 +100,6 @@ const ButtonBarRow = styled("a")`
 
 const KKSIBanner = styled("div")`
   margin-top: 2rem;
-  
-  img {
-    max-width: 369px;
-    max-height: 54px;
-  }
 `
 
 const PostGrid = styled("div")`
@@ -341,7 +336,7 @@ const Home = ({ meta }) => (
         </ButtonBar>
       </p>
       <KKSIBanner>
-        <Image alt={"Logo KKSI"} filename={"kksi.png"} height={369}/>
+        <Image alt={"Logo KKSI"} filename={"kksi.png"} width={369} />
       </KKSIBanner>
     </Hero>
     <Section>

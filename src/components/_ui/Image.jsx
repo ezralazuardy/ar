@@ -36,13 +36,13 @@ const Image = props => (
         return n.node.relativePath.includes(props.filename)
       })
       if (!image) return null
-      if(props.height) return <Img
+      if(props.width) return <Img
         alt={props.alt}
         fluid={image.node.childImageSharp.fluid}
         imgStyle={{ objectFit: "contain" }}
-        style={{ maxHeight: `${props.height}` }}
+        style={{ width: `${props.width}px` }}
       />
-      else return <Img
+      return <Img
         alt={props.alt}
         fluid={image.node.childImageSharp.fluid}
         imgStyle={{ objectFit: "contain" }}
