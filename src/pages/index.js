@@ -101,8 +101,8 @@ const ButtonBarRow = styled("a")`
 const KKSIBanner = styled("div")`
   margin-top: 2rem;
   img {
-    max-width: 369px;
-    max-height: 54px;
+    max-width: 360px;
+    max-height: 52px;
   }
 `
 
