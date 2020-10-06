@@ -341,7 +341,7 @@ const Home = ({ meta }) => (
         </ButtonBar>
       </p>
       <KKSIBanner>
-        <Image alt={"Logo KKSI"} filename={"kksi.png"}/>
+        <Image alt={"Logo KKSI"} filename={"kksi.png"} height={369}/>
       </KKSIBanner>
     </Hero>
     <Section>
