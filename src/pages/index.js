@@ -178,6 +178,15 @@ const recordedVideos = [
     buttonText: "Tonton",
     videoLink: "https://youtu.be/mvFF7KsZ5lg",
   },
+  {
+    title: "Pertemuan 5",
+    author: "Tim SMK Negeri 7 Semarang",
+    category: "Rekaman Daring",
+    date: "10/07/2020",
+    description: "Perancangan UI & UX Aplikasi Android Augmented Reality",
+    buttonText: "Tonton",
+    videoLink: "https://youtu.be/BQ4uUXXygHA",
+  }
 ]
 
 const references = [
