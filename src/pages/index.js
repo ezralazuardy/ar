@@ -148,7 +148,7 @@ const assets = [
     category: "Aset Proyek",
     description: "Gambar latar (background) aplikasi AR yang digunakan pada pembelajaran sesi 5",
     image: "rar.png",
-    referenceLink: "https://drive.google.com/file/d/1rfjppJngYM8yS6nXAilH_cLMkZK0WQ02/view?usp=sharing",
+    referenceLink: "https://drive.google.com/file/d/1D_SjAt64iLo8yFOkGhU4OILv4arpytwA/view?usp=sharing",
   },
   {
     title: "Image Target",
