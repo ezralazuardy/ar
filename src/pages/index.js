@@ -420,7 +420,7 @@ const Home = ({ meta }) => (
             rel="noopener noreferrer"> Ezra Lazuardy</a>
           <span> dan </span>
           <a
-            href="https://www.instagram.com/ayubi_/"
+            href="https://porto-salahudin.azurewebsites.net/"
             target="_blank"
             rel="noopener noreferrer">Salahudin Al Ayubi</a>.
         </>}
