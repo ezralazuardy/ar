@@ -139,7 +139,7 @@ const helperModules = [
     image: "blender.png",
     buttonText: "Baca",
     link: "https://docs.google.com/document/d/1yK6H-tW1Xq9zfeT2BzprNuU4rTuMDxduOsWRXWMBOjI/edit?usp=sharing",
-  },
+  }
 ]
 
 const assets = [
@@ -151,12 +151,19 @@ const assets = [
     referenceLink: "https://drive.google.com/file/d/1D_SjAt64iLo8yFOkGhU4OILv4arpytwA/view?usp=sharing",
   },
   {
+    title: "Model 3D",
+    category: "Aset Proyek",
+    description: "Model 3D Blender yang digunakan pada pembelajaran sesi 7",
+    image: "rar.png",
+    referenceLink: "https://drive.google.com/file/d/1pRHhih4ACDV7AzaUiPYo6ECHal5ICTPz/view?usp=sharing",
+  },
+  {
     title: "Image Target",
     category: "Aset Proyek",
     description: "Image Target AR yang digunakan pada pembelajaran sesi 8",
     image: "rar.png",
     referenceLink: "https://drive.google.com/file/d/1-EPVaY0mlfekLhUMqO4ueixhXol13bsy/view?usp=sharing",
-  },
+  }
 ]
 
 const recordedVideos = [
@@ -186,6 +193,24 @@ const recordedVideos = [
     description: "Perancangan UI & UX Aplikasi Android Augmented Reality",
     buttonText: "Tonton",
     videoLink: "https://youtu.be/BQ4uUXXygHA",
+  },
+  {
+    title: "Pertemuan 6",
+    author: "Tim SMK Negeri 7 Semarang",
+    category: "Rekaman Daring",
+    date: "10/13/2020",
+    description: "Modelling, Coloring, dan Texturing Model 3D dengan Blender",
+    buttonText: "Tonton",
+    videoLink: "https://youtu.be/TlqB-vi_fxM",
+  },
+  {
+    title: "Pertemuan 7",
+    author: "Tim SMK Negeri 7 Semarang",
+    category: "Rekaman Daring",
+    date: "10/14/2020",
+    description: "Animating Model 3D dengan Blender dan Importing ke Unity",
+    buttonText: "Tonton",
+    videoLink: "https://youtu.be/mCdYoLRTojg",
   }
 ]
 
