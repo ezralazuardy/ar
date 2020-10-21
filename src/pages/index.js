@@ -211,6 +211,15 @@ const recordedVideos = [
     description: "Animating Model 3D dengan Blender dan Importing ke Unity",
     buttonText: "Tonton",
     videoLink: "https://youtu.be/mCdYoLRTojg",
+  },
+  {
+    title: "Pertemuan 8",
+    author: "Tim SMK Negeri 7 Semarang",
+    category: "Rekaman Daring",
+    date: "10/20/2020",
+    description: "Perancangan Image Target dan Implementasi Model 3D ke Aplikasi Android",
+    buttonText: "Tonton",
+    videoLink: "https://youtu.be/p_wfL2LLFXY",
   }
 ]
 
