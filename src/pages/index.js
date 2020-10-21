@@ -124,7 +124,7 @@ const helperModules = [
     description: "Instalasi dan Konfigurasi Software Unity IDE",
     image: "unity.png",
     buttonText: "Baca",
-    downloadLink: "https://docs.google.com/document/d/164vL5IYTCh7l7sICxVBORulaPEsgbkwUXWghwL0HHcI/edit?usp=sharing",
+    link: "https://docs.google.com/document/d/164vL5IYTCh7l7sICxVBORulaPEsgbkwUXWghwL0HHcI/edit?usp=sharing",
   },
   {
     title: "Penyiapan Vuforia",
